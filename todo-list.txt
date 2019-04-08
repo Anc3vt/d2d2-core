@@ -1,0 +1,34 @@
+- (V) implement TextureCombiner;
+- (V) make awt dependencive TextureCombiner features through the TextureLink
+- (V) implement bitmaptext to texture combine
+-     implement scale modes: (prorogue to Renderer developer) 
+	- (V) SCALE_MODE_REAL
+	- (V) SCALE_MODE_FIT
+	- (V) SCALE_MODE_OUTFIT
+	- (V) SCALE_MODE_EXTENDED
+	- (V) SCALE_MODE_AUTO
+	- ! all modes excluding SCALE_MODE_REAL scaled by X too much
+
+- implement alignment: (prorogue to Rendered developer)
+	-     ALIGN_BOTTOM       
+	-     ALIGN_BOTTOM_LEFT 
+	-     ALIGN_BOTTOM_RIGHT
+	-     ALIGN_LEFT 		 
+	-     ALIGN_RIGHT 	
+	-     ALIGN_TOP	   
+	- (V) ALIGN_TOP_LEFT 
+	-     ALIGN_TOP_RIGHT
+
+- (V) BitmapText.getTextWidth/Height implementation
+- (V) scaling/locating display objects right way
+- (V) disable multiple adding the same DisplayObject
+- (V) fix float coloring for BitmapText in Renderer
+- (V) fix DisplayObjectContainer.remove method
+- (V) font2bitmap: creating out/ directory if not exists if --output not defined by user
+- (V) d2d2-panels: TitledPanel create borders to title
+- (V) d2d2-panels: Buttons with icons
+- (V) d2d2-panels: Button disabled flag
+- (V) d2d2-panels: Checkbox
+- (V) d2d2-panels: TextInput
+- (V) correct touch positions with SCALE_MODE_EXTENDED
+-     One touch by one point

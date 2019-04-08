@@ -1,0 +1,6 @@
+:d2d2-logo.png
+	satellite 0   0   64  48
+	
+:demo-tileset.png
+	brick	  112 16  16  16
+	test16x16 0 144 16 16
