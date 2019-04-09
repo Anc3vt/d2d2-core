@@ -67,7 +67,7 @@ public class FrameSet extends DisplayObjectContainer {
 	public void setFrames(DisplayObject[] frames) {
 		this.frames = frames;
 		if (frames.length > 0)
-			goTo(0);
+			goToFrame(0);
 	}
 
 	/**
@@ -136,7 +136,7 @@ public class FrameSet extends DisplayObjectContainer {
 	 * Включает следующий кадр
 	 */
 	public void nextFrame() {
-		goTo(++currentFrameNum);
+		goToFrame(++currentFrameNum);
 		if (currentFrameNum >= frames.length) {
 		}
 		drawCurrentFrame();
@@ -157,7 +157,7 @@ public class FrameSet extends DisplayObjectContainer {
 	 * 
 	 * @param frameNumber номер кадра, к которому следует перейти
 	 */
-	public void goTo(int frameNumber) {
+	public void goToFrame(int frameNumber) {
 		currentFrameNum = frameNumber;
 		
 		if (currentFrameNum >= frames.length) {
@@ -179,10 +179,10 @@ public class FrameSet extends DisplayObjectContainer {
 	 * 
 	 * @param frame экранный-объект кадр к которому следует перейти
 	 */
-	public void goTo(final DisplayObject frame) {
+	public void goToFrame(final DisplayObject frame) {
 		for (int i = 0; i < frames.length; i++) {
 			if (frames[i] == frame) {
-				goTo(i);
+				goToFrame(i);
 				return;
 			}
 		}
@@ -223,7 +223,7 @@ public class FrameSet extends DisplayObjectContainer {
 		frames = newFrames;
 
 		if (empty) {
-			goTo(0);
+			goToFrame(0);
 		}
 	}
 
