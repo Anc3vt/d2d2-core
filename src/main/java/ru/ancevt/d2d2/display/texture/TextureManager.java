@@ -40,6 +40,11 @@ public class TextureManager {
 	}
 
 	public final TextureAtlas loadTextureAtlas(final InputStream pngInputStream) {
+		if(textureLink == null) {
+			System.err.println("WARNING: Texture manager can not be initialized without standart D2D2 sturtup pipeline");
+			return null;
+		}
+		
 		final TextureAtlas result = textureLink.createTextureAtlas(pngInputStream);
 		textureAtalases.add(result);
 		return result;

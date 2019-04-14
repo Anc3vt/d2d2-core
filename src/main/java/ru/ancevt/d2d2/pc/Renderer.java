@@ -66,15 +66,12 @@ class Renderer implements GLEventListener, IRenderer {
 
 	@Override
 	public void init(GLAutoDrawable gLDrawable) {
-
 		gl = gLDrawable.getGL().getGL2();
 		glProfile = gLDrawable.getGLProfile();
 		
-		//gl.glHint(GL2.GL_POINT_SMOOTH_HINT,   GL2.GL_NICEST);
-		//gl.glHint(GL2.GL_LINE_SMOOTH_HINT,    GL2.GL_NICEST);
-		//gl.glHint(GL2.GL_POLYGON_SMOOTH_HINT, GL2.GL_NICEST);
-		
-		
+		gl.glHint(GL2.GL_POINT_SMOOTH_HINT,   GL2.GL_NICEST);
+		gl.glHint(GL2.GL_LINE_SMOOTH_HINT,    GL2.GL_NICEST);
+		gl.glHint(GL2.GL_POLYGON_SMOOTH_HINT, GL2.GL_NICEST);
 
 		reshape(gLDrawable, 0, 0, canvas.getWidth(), canvas.getHeight());
 
