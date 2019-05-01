@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
@@ -84,5 +85,9 @@ public class Assets {
 
 	public static final BufferedReader readFile(final String assetFilePath) throws FileNotFoundException {
 		return readFile(getFile(assetFilePath));
+	}
+	
+	public static final InputStream readFileAsInputStream(String assetFilePath) throws FileNotFoundException {
+		return new FileInputStream(assetFilePath);
 	}
 }
