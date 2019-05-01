@@ -86,8 +86,5 @@ public class Assets {
 	public static final BufferedReader readFile(final String assetFilePath) throws FileNotFoundException {
 		return readFile(getFile(assetFilePath));
 	}
-	
-	public static final InputStream readFileAsInputStream(String assetFilePath) throws FileNotFoundException {
-		return new FileInputStream(assetFilePath);
-	}
+
 }
