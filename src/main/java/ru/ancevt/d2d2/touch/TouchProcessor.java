@@ -107,7 +107,7 @@ public class TouchProcessor {
 			}
 		}
 
-		for(int i = 0; i < touchableComponents.size(); i ++) {
+		for(int i = touchableComponents.size()-1; i >= 0; i --) {
 			final TouchButton c = touchableComponents.get(i);
 			
 			final float tcX = c.getAbsoluteX();
@@ -119,7 +119,7 @@ public class TouchProcessor {
 				if(down) {
 					t.setTouchButton(c);
 					t.getTouchButton().setDragging(true);
-					c.onTouchDown((int)(x - tcX),(int)(y - tcY));
+					if(!c.onTouchDown((int)(x - tcX),(int)(y - tcY))) break;
 				}
 			}
 		}
@@ -138,16 +138,8 @@ public class TouchProcessor {
 
 			final float tcX = c.getAbsoluteX();
 			final float tcY = c.getAbsoluteY();
-//			final float tcW = c.getTouchArea().width * c.getAbsoluteScaleX();;
-//			final float tcH = c.getTouchArea().height * c.getAbsoluteScaleY();
 			
-			if(c.isOnScreen() && c.isDragging()
-//				&& x >= tcX 
-//				&& x <= tcX + tcW 
-//				&& y >= tcY 
-//				&& y <= tcY + tcH
-				) {
-				
+			if(c.isOnScreen() && c.isDragging()) {
 				c.onTouchDrag((int)(x - tcX),(int)(y - tcY));
 			} 
 		}

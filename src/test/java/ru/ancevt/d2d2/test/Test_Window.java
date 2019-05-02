@@ -101,9 +101,9 @@ public class Test_Window {
 		
 		final TouchButton button = new TouchButton(200, 200, true) {
 			@Override
-			public void onTouchDown(int x, int y) {
+			public boolean onTouchDown(int x, int y) {
 				System.out.println("Touch down");
-				super.onTouchDown(x, y);
+				return super.onTouchDown(x, y);
 			}
 		};
 		root.add(button);
