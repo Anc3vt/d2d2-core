@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import ru.ancevt.d2d2.exception.TextureException;
 import ru.ancevt.d2d2.io.Assets;
 
 public class TextureManager {
@@ -92,7 +93,7 @@ public class TextureManager {
 			if(key.equals(texture.getKey())) return texture;
 		}
 		
-		return null;
+		throw new TextureException("No such texture key \"" + key + "\"");
 	}
 	
 	public final void loadTextureDataInfo() {
