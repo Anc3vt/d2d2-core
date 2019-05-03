@@ -74,6 +74,10 @@ public class Sprite extends DisplayObject implements ISprite {
 	public Texture getTexture() {
 		return texture;
 	}
+	
+	public void clearTexture() {
+		this.texture = null;
+	}
 
 	@Override
 	public void setTexture(Texture value) {
@@ -87,12 +91,12 @@ public class Sprite extends DisplayObject implements ISprite {
 	
 	@Override
 	public float getWidth() {
-		return texture.getWidth();
+		return (texture == null) ? 0 : texture.getWidth();
 	}
 	
 	@Override
 	public float getHeight() {
-		return texture.getHeight();
+		return (texture == null) ? 0 : texture.getHeight();
 	}
 
 	@Override
