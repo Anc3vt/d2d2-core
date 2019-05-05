@@ -13,6 +13,7 @@
  */
 package ru.ancevt.d2d2.touch;
 
+import ru.ancevt.d2d2.display.DisplayObject;
 import ru.ancevt.d2d2.display.DisplayObjectContainer;
 
 /**
@@ -33,6 +34,7 @@ public class TouchButton extends DisplayObjectContainer {
 	private TouchArea touchArea;
 	private boolean enabled;
 	private boolean dragging;
+	private DisplayObject displayObject;
 
 	/**
 	 * Конструктор.
@@ -63,6 +65,22 @@ public class TouchButton extends DisplayObjectContainer {
 	 */
 	public TouchButton() {
 		this(DEFAULT_WIDTH, DEFAULT_HEIGHT);
+	}
+	
+	public final void setDisplayObject(DisplayObject displayObject) {
+		this.displayObject = displayObject;
+		
+		if(displayObject == null && this.displayObject != null) {
+			remove(this.displayObject);
+			return;
+		}
+		
+		setSize(displayObject.getWidth(), displayObject.getHeight());
+		add(displayObject);
+	}
+	
+	public final DisplayObject getDisplayObject() {
+		return displayObject;
 	}
 
 	/**
