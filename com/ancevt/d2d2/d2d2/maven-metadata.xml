@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>com.ancevt.d2d2</groupId>
-  <artifactId>d2d2-core</artifactId>
+  <artifactId>d2d2</artifactId>
   <versioning>
+    <release>1.0.0.6-alpha</release>
     <versions>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>1.0.0.6-alpha</version>
     </versions>
-    <lastUpdated>20220526191912</lastUpdated>
+    <lastUpdated>20220526192012</lastUpdated>
   </versioning>
 </metadata>
