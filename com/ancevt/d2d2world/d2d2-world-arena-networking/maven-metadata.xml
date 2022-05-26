@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-  <groupId>com.ancevt.d2d2</groupId>
-  <artifactId>d2d2-sockets</artifactId>
+  <groupId>com.ancevt.d2d2world</groupId>
+  <artifactId>d2d2-world-arena-networking</artifactId>
   <versioning>
     <release>1.0.0.6-alpha</release>
     <versions>

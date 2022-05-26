@@ -4,11 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ancevt.d2d2</groupId>
-    <artifactId>d2d2-sockets</artifactId>
+    <parent>
+        <artifactId>d2d2</artifactId>
+        <groupId>com.ancevt.d2d2</groupId>
+        <version>1.0.0.6-alpha</version>
+    </parent>
+
+    <groupId>com.ancevt.d2d2world</groupId>
+    <artifactId>d2d2-world-arena-networking</artifactId>
     <version>1.0.0.6-alpha</version>
 
-    <name>D2D2 Sockets</name>
+    <name>D2D2 World Arena Networking</name>
     <url>https://github.com/Anc3vt/d2d2</url>
 
     <licenses>
@@ -35,14 +41,7 @@
     </distributionManagement>
 
     <repositories>
-        <repository>
-            <id>ancevt-commons-mvn-repo</id>
-            <url>https://raw.github.com/Anc3vt/ancevt-commons/mvn-repo/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
+
     </repositories>
 
     <properties>
@@ -50,10 +49,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
 
-        <github.global.server>github</github.global.server>
-
         <!-- Plugins -->
-        <github.maven-plugin>0.12</github.maven-plugin>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
@@ -63,37 +59,28 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.ancevt.commons</groupId>
-            <artifactId>ancevt-commons</artifactId>
-            <version>1.0.0.3</version>
+            <groupId>com.ancevt.d2d2</groupId>
+            <artifactId>d2d2-sockets</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ancevt.d2d2</groupId>
+            <artifactId>d2d2-world</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ancevt.d2d2world</groupId>
+            <artifactId>d2d2-world-data</artifactId>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.11</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
         </dependency>
         <dependency>
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>23.0.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>1.3</version>
-            <scope>test</scope>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
         </dependency>
     </dependencies>
 
@@ -125,35 +112,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>${maven-deploy-plugin.version}</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven-surefire-plugin.version}</version>
-            </plugin>
-
-            <plugin>
-                <groupId>com.github.github</groupId>
-                <artifactId>site-maven-plugin</artifactId>
-                <version>${github.maven-plugin}</version>
-                <configuration>
-                    <message>Maven artifacts for ${project.version}</message>
-                    <noJekyll>true</noJekyll>
-                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-                    <branch>refs/heads/mvn-repo</branch>
-                    <includes><include>**/*</include></includes>
-                    <repositoryName>d2d2</repositoryName>
-                    <repositoryOwner>Anc3vt</repositoryOwner>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <phase>deploy</phase>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
