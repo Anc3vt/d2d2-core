@@ -85,7 +85,7 @@
         <platform>linux</platform>
 
         <!-- Ancevt -->
-        <args.version>2.0.5</args.version>
+        <args.version>2.1.0</args.version>
         <local-storage.version>1.1.2</local-storage.version>
         <ancevt-commons.version>1.0.0.4</ancevt-commons.version>
         <texttable.version>0.0.1</texttable.version>
